@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,10 @@
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.1.5/dist/aframe-mindar-face.min.js"></script>
 </head>
+
 <body>
-    <a-scene mindar-face embedded>
+    <a-scene mindar-face embedded vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: true"
+        video="user">
         <a-camera position="0 0 0"></a-camera>
 
         <!-- Detección de rostro -->
@@ -19,4 +22,5 @@
         </a-entity>
     </a-scene>
 </body>
+
 </html>
