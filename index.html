@@ -10,6 +10,19 @@
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.1.5/dist/aframe-mindar-face.min.js"></script>
 </head>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        navigator.mediaDevices.getUserMedia({ video: { facingMode: "user" } })
+            .then(function (stream) {
+                let video = document.querySelector("video");
+                video.srcObject = stream;
+            })
+            .catch(function (err) {
+                console.error("Error accessing the front camera:", err);
+            });
+    });
+</script>
+
 <body>
     <a-scene mindar-face embedded vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: true"
         video="user">
